@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pendaftaran Siswa Baru</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <header class="bg-indigo-600 p-6 text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Pendaftaran Siswa Baru</h1>
+      <a href="index.html" class="hover:underline"><i class="fas fa-home"></i> Beranda</a>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto p-6">
+    <form action="/register" method="POST" enctype="multipart/form-data" class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-6 text-center text-indigo-700">Form Pendaftaran</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="fullName" class="block font-medium mb-1">Nama Lengkap</label>
+          <input type="text" id="fullName" name="fullName" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="schoolChoice" class="block font-medium mb-1">Pilihan Sekolah</label>
+          <select id="schoolChoice" name="schoolChoice" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="" disabled selected>Pilih Sekolah</option>
+            <option value="SMA/MA">SMA/MA</option>
+            <option value="SMP/MTS">SMP/MTS</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="advancedLevel" class="block font-medium mb-1">Tingkat Lanjutan</label>
+          <input type="text" id="advancedLevel" name="advancedLevel" placeholder="Isi jika ada" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="studentType" class="block font-medium mb-1">Jenis Siswa</label>
+          <select id="studentType" name="studentType" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="" disabled selected>Pilih Jenis Siswa</option>
+            <option value="Siswa Baru">Siswa Baru</option>
+            <option value="Siswa Pindahan">Siswa Pindahan</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="nisn" class="block font-medium mb-1">NISN</label>
+          <input type="text" id="nisn" name="nisn" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="originSchool" class="block font-medium mb-1">Asal Sekolah</label>
+          <input type="text" id="originSchool" name="originSchool" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="birthPlace" class="block font-medium mb-1">Tempat Lahir</label>
+          <input type="text" id="birthPlace" name="birthPlace" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="birthDate" class="block font-medium mb-1">Tanggal Lahir</label>
+          <input type="date" id="birthDate" name="birthDate" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div class="md:col-span-2">
+          <label for="address" class="block font-medium mb-1">Alamat</label>
+          <textarea id="address" name="address" rows="3" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+
+        <div>
+          <label for="phoneNumber" class="block font-medium mb-1">Nomor Handphone</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10,15}" placeholder="081234567890" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="fatherName" class="block font-medium mb-1">Nama Ayah</label>
+          <input type="text" id="fatherName" name="fatherName" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="motherName" class="block font-medium mb-1">Nama Ibu</label>
+          <input type="text" id="motherName" name="motherName" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div class="md:col-span-2">
+          <label for="photo" class="block font-medium mb-1">Upload Foto</label>
+          <input type="file" id="photo" name="photo" accept="image/*" required class="w-full" />
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <button type="submit" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">Daftar</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
